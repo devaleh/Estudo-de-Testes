@@ -6,6 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
@@ -56,5 +57,22 @@ class CalculadoraTest {
                 Arguments.of(10, 10, 0),
                 Arguments.of(100.5, 50.25, 50.25)
         );
+    }
+
+    @DisplayName("Testando subtrair da calculadora - Param")
+    @ParameterizedTest
+    @CsvSource({
+            "50, 20, 30",
+            "100, 50, 50",
+            "10, 10, 0",
+            "100.5, 50.25, 50.25"
+    })
+    void subtrairCsv(double paramUm, double paramDois, double esperado) {
+
+        var resultado = calculadora.subtrair(paramUm, paramDois);
+
+        // Com delta, garantindo 2 casas decimais
+        assertEquals(esperado, resultado, 2D);
+        assertNotEquals(200, resultado, 2D);
     }
 }

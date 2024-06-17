@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@Order(2)
+//@Order(2)
 @DisplayName("Calculadora")
 class CalculadoraTest {
 

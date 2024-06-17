@@ -5,7 +5,7 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@Order(3)
+//@Order(3)
 public class DemoRepeatedTest {
 
     Calculadora calculadora;

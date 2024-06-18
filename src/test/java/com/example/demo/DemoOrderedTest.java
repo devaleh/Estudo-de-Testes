@@ -2,7 +2,7 @@ package com.example.demo;
 
 import org.junit.jupiter.api.*;
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+//(TestInstance.Lifecycle.PER_CLASS)
 //@Order(1)
 //@TestMethodOrder(MethodOrderer.Random.class)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)

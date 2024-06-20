@@ -28,7 +28,7 @@ public class ListTest {
         // Mocando uma lista
         List<?> list = mock(List.class);
 
-        // Quando list.size() ser chamado, retornar 10
+        // Quando list.size() ser chamado, retornar 10/20/30
         when(list.size()).thenReturn(10).thenReturn(20).thenReturn(30);
 
         // assert de comparação
@@ -54,5 +54,21 @@ public class ListTest {
         // assert de comparação
         assertEquals("Alexandre", list.get(1));
         assertEquals("Alexandre", list.get(anyInt()));
+    }
+
+    @Test
+    void testMockingListThrow() {
+
+        // Mocando uma lista
+        var list = mock(List.class);
+
+        // Quando acessar qualquer posição de list retornara uma Exception
+        when(list.get(anyInt())).thenThrow(new RuntimeException("Exception"));
+
+        // assert
+        assertThrows(RuntimeException.class, () -> {
+            list.get(anyInt());
+        }, "");
+
     }
 }
